@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Information</title>
+    <link rel="stylesheet" href="../styles/units.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../styles/login.css">
+  </head>
+  <body style="background-color: black;">
+    <button type="button" class="login-button"  style="position:absolute; right:0; top: 50px; width:200px" onclick="logout()" style="margin-top: 20px;">Logout </button>
+    <button type="button" class="login-button"  style="position:absolute; left:0; top: 50px; width:200px" onclick="showChart()" style="margin-top: 20px;">Show Charts </button>
+    <div class="table-heading" style="color: #ffd700; text-align:center; padding:50px;">Below is list all the available units for you <br>
+        <i style="color: #fff; font-weight:200;">Hover on highlighted text for more details</i>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="padding-left: 60px;" id="showPopupBtn" onclick="showPopUp()"><i class="sort-icon bi bi-funnel"></th>
+          <th style="white-space: nowrap" onclick="data_sort('code')">
+            <span>Code <i class="sort-icon bi bi-caret-down"></i></span>
+          </th>
+          <th>Name</th>
+          <th>Quality</th>
+          <th>Type</th>
+          <th>Ability</th>
+          <th  style="white-space: nowrap" onclick="data_sort('health')">   <span>Health<i class="sort-icon bi bi-caret-down"></i></span></th>
+          <th  style="white-space: nowrap" onclick="data_sort('attack')"><span> Attack<i class="sort-icon bi bi-caret-down"></i></span> </th>
+          <th>Movement</th>
+          <th>Spawn Cost</th>
+          <th>Spawn Cooldown </th>
+          <th>Edit</th>
+        </tr>
+        <tbody id="unitList"></tbody>
+      </table>
+
+      <div id="popup" class="popup">
+
+        <div class="popup-content">
+            Select filters
+            <span class="close" id="closePopupBtn">&times;</span>
+        <label for="quality">Type</label>
+        <select id="type" name="type">
+            <option value="none">Select option</option>
+
+            <option value="Minion">Minion</option>
+            <option value="Hero">Hero</option>
+            <option value="Tower">Tower</option>
+        </select><br>
+        <label for="quality">Movement Speed</label>
+        <select id="speed" name="speed">
+            <option value="none">Select option</option>
+
+            <option value="Faster">Faster</option>
+            <option value="Fast">Fast</option>
+            <option value="Medium">Medium</option>
+            <option value="Stationary">Stationary</option>
+        </select><br>
+        <button type="button" class="login-button" onclick="apply_filter()" style="margin-top: 20px;">Apply Filters</button>
+
+
+        </div>
+    </div>
+
+    <div id="session_popup" class="popup">
+
+      <div class="popup-content">
+        Session has expired , please click below button to continue.
+      <button type="button"  class="login-button" onclick="refreshAccessToken()" style="margin-top: 20px;">Refresh Session</button>
+
+
+      </div>
+  </div>
+
+    </div>
+  </body>
+  <script src="../service/unit.js"></script>
+  <script src="../service/logout.js"></script>
+  <script src="../service/token_refresh.js"></script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/edit-unit.css">
+    <title>Update Unit</title>
+</head>
+<body>
+    <button type="button" style="position:absolute; right:0; top: 50px; width:200px" onclick="logout()" style="margin-top: 20px;">Logout </button>
+
+    <h1>Update Unit</h1>
+    <form id="updateForm">
+        <label id="unitId" style="display:flex; justify-content:center;"></label>
+
+        <label for="quality">Quality:</label>
+        <select id="quality" name="quality">
+            <option value="none">Select option</option>
+            <option value="Common">Common</option>
+            <option value="Rare">Rare</option>
+            <option value="Epic">Epic</option>
+        </select><br>
+
+        <label for="health">Health:</label>
+        <input type="number" id="health" name="health"  step="5" min="5" max="10000" ><br>
+
+        <label for="attack">Attack:</label>
+        <input type="number" id="attack" name="attack"  step="5" min="5" max="500"><br>
+
+        <label for="maxTargetCount">Max Target Count:</label>
+        <input type="number" id="maxTargetCount" name="maxTargetCount"  min="1" max="100"><br>
+
+        <label for="spawnCost">Spawn Cost:</label>
+        <input type="number" id="spawnCost" name="spawnCost"  step="5" min="0" max="1000"><br>
+
+        <label for="spawnCooldown">Spawn Cooldown (seconds):</label>
+        <input type="number" id="spawnCooldown" name="spawnCooldown"  step="0.1" min="0" max="100"><br>
+
+        <button type="submit" onclick="update()">Update Unit</button>
+    </form>
+    <div id="session_popup" class="popup">
+
+        <div class="popup-content" style="color: #ffd700;">
+          Session has expired , please click below button to continue.
+        <button type="button"  class="login-button" onclick="refreshAccessToken()" style="margin-top: 20px;">Refresh Session</button>
+  
+  
+        </div>
+    </div>
+  
+</body>
+<script src="../service/edit_unit.js"></script>
+<script src="../service/logout.js"></script>
+<script  src="../service/token_refresh.js"></script>
+
+</html>

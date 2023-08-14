@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/chart.css">
+</head>
+<body style="background-color: black; color:#fff; padding:0 50px 0; ">
+    <button type="button" class="login-button"  style="position:absolute; right:0; top: 50px; width:200px" onclick="logout()" style="margin-top: 20px;">Logout </button>
+    
+    <div style="position:absolute; left:50%; transform:translateX(-50%); top: 50px; width:200px; display:flex">
+    <label for="quality"style="color:#ffd700; padding-right:20px; white-space:nowrap;">Select Month</label>
+    <select id="month" name="month" style="width: 200px;" onchange="changeMonth()">
+
+        <option value="jan">Jan</option>
+        <option value="feb">Feb</option>
+        <option value="mar">March</option>
+    </select>
+</div>
+
+    <div class="container" style="padding-top: 30px;">
+        <canvas id="salesChart" style="width:100%;max-width:900px; color:#fff ; position:relative; left:50%; transform:translateX(-50%)"></canvas>
+    </div>
+    <div id="session_popup" class="popup">
+
+        <div class="popup-content">
+          Session has expired , please click below button to continue.
+        <button type="button"  class="login-button" onclick="refreshAccessToken()" style="margin-top: 20px;">Refresh Session</button>
+  
+  
+        </div>
+        </div>
+  
+
+    <script src="../service/chart.js"></script>
+    <script src="../service/token_refresh.js"></script>
+    <script src="../service/logout.js"></script>
+</body>
+</html>
