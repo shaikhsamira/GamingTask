@@ -11,7 +11,7 @@ function fetchUnit() {
     const unitList = document.getElementById("unitList");
 
     // Make API request to get units
-    fetch('https://test.indusgame.com/units', {
+    fetch('url/units', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${accessToken}`
