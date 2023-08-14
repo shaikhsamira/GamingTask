@@ -1,6 +1,6 @@
 // Function to refresh access token
 function refreshAccessToken() {
-    console.log("Refresh token");
+  
     var data = {
         refreshToken:localStorage.getItem("refresh_token")
     };
@@ -26,7 +26,7 @@ function refreshAccessToken() {
         }
     })
     .then(result=>{
-        console.log(result);
+        
         var accessToken = result.accessToken;
         var refreshToken = result.refreshToken;
         var expiresInSeconds=result.expiresInSeconds;
