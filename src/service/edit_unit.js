@@ -45,7 +45,7 @@ function update(){
             if (spawnCooldown) {
                 data.spawnCooldownInSeconds = spawnCooldown;
             }   
-             fetch(`https://test.indusgame.com/units/${unitId}`, {
+             fetch(`url/units/${unitId}`, {
                 method: "PATCH",
                 headers: {
                     'Authorization': `${tokenType} ${accessToken}`,
