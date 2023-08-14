@@ -8,7 +8,7 @@ function logout() {
         return;
     }
 
-    fetch('https://test.indusgame.com/logouts', {
+    fetch('url/logouts', {
         method: 'POST',
         headers: {
             'Authorization': `${tokenType} ${accessToken}`
