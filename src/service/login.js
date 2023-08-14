@@ -43,7 +43,7 @@ function authenticatePost(username, password) {
     };
 
     // Make the POST request to the /logins endpoint
-    fetch('https://test.indusgame.com/logins', {
+    fetch('url/logins', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
