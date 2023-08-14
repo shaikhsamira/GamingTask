@@ -5,7 +5,7 @@ function refreshAccessToken() {
         refreshToken:localStorage.getItem("refresh_token")
     };
 
-    return fetch('https://test.indusgame.com/auths', {
+    return fetch('url/auths', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
