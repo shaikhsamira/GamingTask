@@ -28,7 +28,7 @@ function chart() {
     // Make API request to get units
     const accessToken = localStorage.getItem('access_token'); // Replace with your actual access token
 
-    fetch('https://test.indusgame.com/sales', {
+    fetch('url/sales', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${accessToken}`
